@@ -10,6 +10,6 @@ get("/owners") do
 end
 
 get("/owners/:id") do
-  @owners = Owner.find(params['id'].to_i)
+  @owner = Owner.find(params[:id].to_i)
   erb(:"owners/show")
 end

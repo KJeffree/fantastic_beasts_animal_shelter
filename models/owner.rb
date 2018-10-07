@@ -44,7 +44,7 @@ class Owner
     sql = "SELECT * FROM owners
     WHERE id = $1"
     owner_array = SqlRunner.run(sql, [id])
-    result = owner_array.first
+    result = Owner.new(owner_array.first)
     return result
   end
 
