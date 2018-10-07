@@ -40,4 +40,22 @@ class Owner
     return all_owners
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM owners
+    WHERE id = $1"
+    owner_array = SqlRunner.run(sql, [id])
+    result = owner_array.first
+    return result
+  end
+
+  def delete()
+    sql = "DELETE FROM owners
+    WHERE id = $1"
+    SqlRunner.run(sql, [@id])
+  end
+
+  def full_name()
+    return "#{@first_name} #{@last_name}"
+  end
+
 end

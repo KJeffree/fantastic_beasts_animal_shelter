@@ -42,4 +42,18 @@ class AdoptedBeast
     return all_adopted_beasts
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM adopted_beasts
+    WHERE id = $1"
+    adoption_array = SqlRunner.run(sql, [id])
+    result = adoption_array.first
+    return result
+  end
+
+  def delete()
+    sql = "DELETE FROM adopted_beasts
+    WHERE id = $1"
+    SqlRunner.run(sql, [@id])
+  end
+
 end

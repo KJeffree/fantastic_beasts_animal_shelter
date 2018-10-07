@@ -44,4 +44,26 @@ class Beast
     return all_beasts
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM beasts
+    WHERE id = $1"
+    beasts_array = SqlRunner.run(sql, [id])
+    result = beasts_array.first
+    return result
+  end
+
+  def self.find_type(type)
+    sql = "Select * FROM beasts
+    WHERE type = $1"
+    beasts_array = SqlRunner.run(sql, [type])
+    result = beasts_array.map { |beast| Beast.new(beast) }
+    return result
+  end
+
+  def delete()
+    sql = "DELETE FROM beasts
+    WHERE id = $1"
+    SqlRunner.run(sql, [@id])
+  end
+
 end
