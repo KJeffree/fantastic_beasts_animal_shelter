@@ -15,4 +15,33 @@ class Beast
     @diet = options['diet']
   end
 
+  def save()
+    sql = "INSERT INTO beasts (name, type, collection_date, adoption_status, characteristics, diet)
+    VALUES ($1, $2, $3, $4, $5, $6)
+    RETURNING id"
+    values = [@name, @type, @collection_date, @adoption_status, @characteristics, @diet]
+    result = SqlRunner.run(sql, values)
+    @id = result[0]['id'].to_i
+  end
+
+  def self.delete_all()
+    sql = "DELETE FROM beasts"
+    SqlRunner.run(sql)
+  end
+
+  def update()
+    sql = "UPDATE beasts
+    SET (name, type, collection_date, adoption_status, characteristics, diet) = ($1, $2, $3, $4, $5, $6)
+    WHERE id = $7"
+    values = [@name, @type, @collection_date, @adoption_status, @characteristics, @diet, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM beasts"
+    beasts = SqlRunner.run(sql)
+    all_beasts = beasts.map { |beast| Beast.new(beast) }
+    return all_beasts
+  end
+
 end
