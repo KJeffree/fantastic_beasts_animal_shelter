@@ -1,0 +1,23 @@
+<nav>
+  <li>
+    <a href="/adoptions/new">New Adoption</a>
+  </li>
+</nav>
+
+<h1>Adoptions</h1>
+
+<table>
+  <tr>
+    <th>Owner Name</th>
+    <th>Beast Name</th>
+    <th>Beast Type</th>
+  </tr>
+  <% for adoption in @adoptions %>
+  <tr>
+    <td> <a href="/owners/<%= adoption.owner.id %>"><%= adoption.owner.full_name.capitalize %></a> </td>
+    <td> <a href="/beasts/<%= adoption.beast.id %>"><%= adoption.beast.name.capitalize %></a></td>
+    <td><%= adoption.beast.type.capitalize %></td>
+    <td> <a href="/adoptions/<%= adoption.id %>">View Details</a> </td>
+  </tr>
+  <% end %>
+</table>

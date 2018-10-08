@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS adopted_beasts;
+DROP TABLE IF EXISTS adoptions;
 DROP TABLE IF EXISTS beasts;
 DROP TABLE IF EXISTS owners;
 
@@ -18,7 +18,7 @@ CREATE TABLE owners(
   last_name VARCHAR(255)
 );
 
-CREATE TABLE adopted_beasts(
+CREATE TABLE adoptions(
   id SERIAL8 PRIMARY KEY,
   adoption_date DATE,
   update_message TEXT,

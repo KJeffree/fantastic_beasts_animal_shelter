@@ -1,6 +1,6 @@
 require_relative('../db/sql_runner')
 
-class AdoptedBeast
+class Adoption
 
   attr_reader :id, :owner_id, :beast_id
   attr_accessor :adoption_date, :update_message
@@ -14,7 +14,7 @@ class AdoptedBeast
   end
 
   def save()
-    sql = "INSERT INTO adopted_beasts (adoption_date, update_message, owner_id, beast_id)
+    sql = "INSERT INTO adoptions (adoption_date, update_message, owner_id, beast_id)
     VALUES ($1, $2, $3, $4)
     RETURNING id"
     values = [@adoption_date, @update_message, @owner_id, @beast_id]
@@ -23,12 +23,12 @@ class AdoptedBeast
   end
 
   def self.delete_all()
-    sql = "DELETE FROM adopted_beasts"
+    sql = "DELETE FROM adoptions"
     SqlRunner.run(sql)
   end
 
   def update()
-    sql = "UPDATE adopted_beasts
+    sql = "UPDATE adoptions
     SET (adoption_date, update_message, owner_id, beast_id) = ($1, $2, $3, $4)
     WHERE id = $5"
     values = [@adoption_date, @update_message, @owner_id, @beast_id, @id]
@@ -36,24 +36,40 @@ class AdoptedBeast
   end
 
   def self.all()
-    sql = "SELECT * FROM adopted_beasts"
-    adopted_beasts = SqlRunner.run(sql)
-    all_adopted_beasts = adopted_beasts.map { |beast| AdoptedBeast.new(beast) }
-    return all_adopted_beasts
+    sql = "SELECT * FROM adoptions"
+    adoptions = SqlRunner.run(sql)
+    all_adoptions = adoptions.map { |adoption| Adoption.new(adoption) }
+    return all_adoptions
   end
 
   def self.find(id)
-    sql = "SELECT * FROM adopted_beasts
+    sql = "SELECT * FROM adoptions
     WHERE id = $1"
     adoption_array = SqlRunner.run(sql, [id])
-    result = AdoptedBeast.new(adoption_array.first)
+    result = Adoption.new(adoption_array.first)
     return result
   end
 
   def delete()
-    sql = "DELETE FROM adopted_beasts
+    sql = "DELETE FROM adoptions
     WHERE id = $1"
     SqlRunner.run(sql, [@id])
+  end
+
+  def owner()
+    sql = "Select * FROM owners
+    WHERE id = $1"
+    owner_array = SqlRunner.run(sql, [@owner_id])
+    owner = Owner.new(owner_array.first)
+    return owner
+  end
+
+  def beast()
+    sql = "Select * FROM beasts
+    WHERE id = $1"
+    beast_array = SqlRunner.run(sql, [@beast_id])
+    beast_info = Beast.new(beast_array.first)
+    return beast_info
   end
 
 end

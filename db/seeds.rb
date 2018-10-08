@@ -1,9 +1,9 @@
 require_relative('../models/owner.rb')
 require_relative('../models/beast.rb')
-require_relative('../models/adopted_beast')
+require_relative('../models/adoption')
 require('pry')
 
-AdoptedBeast.delete_all()
+Adoption.delete_all()
 Owner.delete_all()
 Beast.delete_all()
 
@@ -24,12 +24,12 @@ beast1.save
 beast2.save
 beast3.save
 
-adopted_beast1 = AdoptedBeast.new({'adoption_date' => '1923-02-15', 'update_message' => 'Fawkes has settled into his new home easily, he is very loyal and we have created a strong bond', 'owner_id' => owner3.id, 'beast_id' => beast3.id})
+adoption1 = Adoption.new({'adoption_date' => '1923-02-15', 'update_message' => 'Fawkes has settled into his new home easily, he is very loyal and we have created a strong bond', 'owner_id' => owner3.id, 'beast_id' => beast3.id})
 
-adopted_beast2 = AdoptedBeast.new({'adoption_date' => '1926-09-29', 'update_message' => "Sickleworth has been a great addition to my life. Of course, I do not keep him in my house, but I have made a suitable habitat for him out in my garden, filled with shiny objects to keep him happy", 'owner_id' => owner1.id, 'beast_id' => beast2.id})
+adoption2 = Adoption.new({'adoption_date' => '1926-09-29', 'update_message' => "Sickleworth has been a great addition to my life. Of course, I do not keep him in my house, but I have made a suitable habitat for him out in my garden, filled with shiny objects to keep him happy", 'owner_id' => owner1.id, 'beast_id' => beast2.id})
 
-adopted_beast1.save
-adopted_beast2.save
+adoption1.save
+adoption2.save
 
 binding.pry
 nil

@@ -1,0 +1,27 @@
+<form action="/adoptions" method="post">
+
+  <label for="owner-name-field">Owner Name: </label>
+  <select name="owner_id" id="owner-name-field">
+    <% for owner in @owners %>
+    <option value="<%= owner.id %>"><%= owner.full_name %></option>
+    <% end %>
+  </select>
+  <br>
+  <br>
+  <label for="beast-name-field">Beast: </label>
+  <select name="beast_id" id="beast-name-field">
+    <% for beast in @beasts %>
+    <% if beast.adoption_status.downcase == 'adoptable' %>
+    <option value="<%= beast.id %>"><%= beast.name + " (" + beast.type.capitalize + ")" %></option>
+    <% end %>
+    <% end %>
+  </select>
+  <br>
+  <br>
+  <label for="adoption-date-field">Adoption Date: </label>
+  <input type="date" name="adoption_date" value="1926-10-10" id="adoption-date-field">
+  <br>
+  <br>
+  <input type="submit" value="Confirm Adoption">
+
+</form>
