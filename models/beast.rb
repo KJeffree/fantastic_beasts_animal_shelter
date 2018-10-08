@@ -48,7 +48,7 @@ class Beast
     sql = "SELECT * FROM beasts
     WHERE id = $1"
     beasts_array = SqlRunner.run(sql, [id])
-    result = beasts_array.first
+    result = Beast.new(beasts_array.first)
     return result
   end
 

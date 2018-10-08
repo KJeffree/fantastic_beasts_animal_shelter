@@ -10,7 +10,7 @@ get("/owners") do
   erb(:"owners/index")
 end
 
-# ADD
+# NEW
 get("/owners/new") do
   erb(:"owners/new")
 end

@@ -46,7 +46,7 @@ class AdoptedBeast
     sql = "SELECT * FROM adopted_beasts
     WHERE id = $1"
     adoption_array = SqlRunner.run(sql, [id])
-    result = adoption_array.first
+    result = AdoptedBeast.new(adoption_array.first)
     return result
   end
 

@@ -1,0 +1,33 @@
+<form action="/beasts/<%= @id %>" method="post">
+
+  <label for="name-field">Name: </label>
+  <input type="text" name="name" id="name-field" value="<%= @beast.name %>">
+  <br>
+  <br>
+  <label for="type-field">Type: </label>
+  <input type="text" name="type" id="type-field" value="<%= @beast.type %>">
+  <br>
+  <br>
+  <label for="collection-date-field">Collection date: </label>
+  <input type="date" name="collection_date" id="collection-date-field" value="<%= @beast.collection_date %>">
+  <br>
+  <br>
+  <label for="adoption-status-field">Adoption Status: </label>
+  <select name="adoption_status" id="adoption-status-field">
+    <option value="Adoptable" <%= 'selected' if @beast.adoption_status.downcase == 'adoptable' %>>Adoptable</option>
+    <option value="Not-Adoptable" <%= 'selected' if @beast.adoption_status.downcase == 'not adoptable' %>>Not Adoptable</option>
+    <option value="Adopted" <%= 'selected' if @beast.adoption_status.downcase == 'adopted' %>>Adopted</option>
+  </select>
+  <br>
+  <br>
+  <label for="characteristics-field">Characteristics: </label>
+  <input type="text" name="characteristics" id="characteristics-field" value="<%= @beast.characteristics %>">
+  <br>
+  <br>
+  <label for="diet-field">Diet: </label>
+  <input type="text" name="diet" id="diet-field" value="<%= @beast.diet %>">
+  <br>
+  <br>
+  <input type="submit" value="Update Beast">
+
+</form>
