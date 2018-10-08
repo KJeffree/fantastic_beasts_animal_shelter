@@ -17,8 +17,8 @@ owner2.save
 owner3.save
 
 beast1 = Beast.new({'name' => 'Pickett', 'type' => 'bowtruckle', 'collection_date' => '1925-04-11', 'adoption_status' => 'not adoptable', 'characteristics' => 'peaceful and shy, but will attack if their tree is threatened', 'diet' => 'woodlice or insects' })
-beast2 = Beast.new({'name' => 'Sickleworth', 'type' => 'niffler', 'collection_date' => '1926-07-24', 'adoption_status' => 'adopted', 'characteristics' => 'affectionate but destructive NOT A HOUSE PET', 'diet' => 'unsure - possibly matellic objects?' })
-beast3 = Beast.new({'name' => 'Fawkes', 'type' => 'pheonix', 'collection_date' => '1920-04-09', 'adoption_status' => 'adopted', 'characteristics' => 'hard to domesticate, regenerates by bursting into flames and rising from the ashes, healing tears', 'diet' => 'herbs'})
+beast2 = Beast.new({'name' => 'Sickleworth', 'type' => 'niffler', 'collection_date' => '1926-07-24', 'adoption_status' => 'adoptable', 'characteristics' => 'affectionate but destructive NOT A HOUSE PET', 'diet' => 'unsure - possibly matellic objects?' })
+beast3 = Beast.new({'name' => 'Fawkes', 'type' => 'pheonix', 'collection_date' => '1920-04-09', 'adoption_status' => 'adoptable', 'characteristics' => 'hard to domesticate, regenerates by bursting into flames and rising from the ashes, healing tears', 'diet' => 'herbs'})
 
 beast1.save
 beast2.save

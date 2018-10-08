@@ -14,9 +14,11 @@ class Adoption
   end
 
   def save()
+    adopted_beast()
     sql = "INSERT INTO adoptions (adoption_date, update_message, owner_id, beast_id)
     VALUES ($1, $2, $3, $4)
-    RETURNING id"
+    RETURNING id;
+    "
     values = [@adoption_date, @update_message, @owner_id, @beast_id]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
@@ -51,6 +53,7 @@ class Adoption
   end
 
   def delete()
+    adoptable_beast()
     sql = "DELETE FROM adoptions
     WHERE id = $1"
     SqlRunner.run(sql, [@id])
@@ -70,6 +73,20 @@ class Adoption
     beast_array = SqlRunner.run(sql, [@beast_id])
     beast_info = Beast.new(beast_array.first)
     return beast_info
+  end
+
+  def adopted_beast()
+    sql = "UPDATE beasts
+    SET adoption_status = 'adopted'
+    WHERE id = $1"
+    SqlRunner.run(sql, [@beast_id])
+  end
+
+  def adoptable_beast()
+    sql = "UPDATE beasts
+    SET adoption_status = 'adoptable'
+    WHERE id = $1"
+    SqlRunner.run(sql, [@beast_id])
   end
 
 end
