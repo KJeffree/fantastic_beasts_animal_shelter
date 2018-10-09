@@ -48,6 +48,7 @@ end
 
 # UPDATE
 post('/adoptions/:id') do
-  Adoption.new(params).update
+  old_beast = Adoption.find(params[:id].to_i).beast_id
+  Adoption.new(params).update(old_beast)
   redirect "/adoptions"
 end

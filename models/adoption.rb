@@ -29,12 +29,14 @@ class Adoption
     SqlRunner.run(sql)
   end
 
-  def update()
+  def update(beast)
+    edited_beast_old(beast)
     sql = "UPDATE adoptions
     SET (adoption_date, update_message, owner_id, beast_id) = ($1, $2, $3, $4)
     WHERE id = $5"
     values = [@adoption_date, @update_message, @owner_id, @beast_id, @id]
     SqlRunner.run(sql, values)
+    adopted_beast()
   end
 
   def self.all()
@@ -87,6 +89,13 @@ class Adoption
     SET adoption_status = 'adoptable'
     WHERE id = $1"
     SqlRunner.run(sql, [@beast_id])
+  end
+
+  def edited_beast_old(old_beast)
+    sql = "UPDATE beasts
+    SET adoption_status = 'adoptable'
+    WHERE id = $1"
+    SqlRunner.run(sql, [old_beast])
   end
 
 end
