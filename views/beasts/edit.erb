@@ -3,9 +3,11 @@
 </head>
 
 <nav>
-  <div><a href="/beasts/new">New Beast</a></div>
-  <div><a href="/beasts/adoptable">Adoptable</a></div>
-  <div><a href="/beasts/not-adoptable">Not Adoptable</a></div>
+  <ul>
+    <li><a href="/beasts/new">New Beast</a></li>
+    <li><a href="/beasts/adoptable">Adoptable</a></li>
+    <li><a href="/beasts/not-adoptable">Not Adoptable</a></li>
+  </ul>
 </nav>
 
 <form action="/beasts/<%= @id %>" method="post">

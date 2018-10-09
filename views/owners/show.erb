@@ -2,9 +2,12 @@
   <link rel="stylesheet" href="/styles/structure.css">
 </head>
 <nav>
-  <div><a href="/owners/new">New Owner</a></div>
+  <ul>
+    <li><a href="/owners/new">New Owner</a></li>
+  </ul>
 </nav>
 
+<body>
 <h1>Owner id: <%= @owner.id %></h1>
 
 <p>Name: <%= @owner.full_name %></p>
@@ -14,3 +17,4 @@
 <form action="/owners/<%= @owner.id %>/delete" method="post">
   <input type="submit" value="Delete Owner">
 </form>
+<body>

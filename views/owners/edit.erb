@@ -1,6 +1,12 @@
 <head>
   <link rel="stylesheet" href="/styles/structure.css">
 </head>
+<body>
+<nav>
+  <ul>
+    <li><a href="/owners/new">New Owner</a></li>
+  </ul>
+</nav>
 
 <form action="/owners/<%= @id %>" method="post">
 
@@ -15,3 +21,4 @@
   <input type="submit" value="Update Owner">
 
 </form>
+</body>
