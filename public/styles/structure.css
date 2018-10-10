@@ -71,10 +71,6 @@ a {
 	background-color:
 }
 
-a.layout {
-
-}
-
 a:hover, a:active, a:focus {
   color: #3c422d;
 }
@@ -109,14 +105,14 @@ h1.layout {
 
 p {
 	padding: 10px;
-	margin-left: 20px;
+	margin-left: 10px;
 	font-family: Karma;
 	font-size: 20px;
 	color: #b29743;
 }
 
 a.edit {
-	margin-left: 30px;
+	margin-left: 20px;
 	font-size: 12px;
 	padding: 5px 15px;
 	border-radius: 4px;
@@ -128,6 +124,7 @@ a.edit {
 div.info {
 	padding-top: 20px;
 	padding-bottom: 20px;
+	padding-left: 0px;
 }
 
 form.button {
