@@ -66,8 +66,13 @@ nav.layout {
 }
 
 a {
-  text-decoration: none;
-  color: #b29743;
+	text-decoration: none;
+  color: #b29749;
+	background-color:
+}
+
+a.layout {
+
 }
 
 a:hover, a:active, a:focus {
@@ -88,9 +93,10 @@ html {
 
 h1 {
   font-size: 30px;
-  color: #ae896b;
+  color: #b29743;
   margin-top: 40px;
   margin-left: 30px;
+	font-family: Karma;
 }
 
 h1.layout {
@@ -105,8 +111,19 @@ p {
 	margin-left: 20px;
 	font-family: Karma;
 	font-size: 20px;
+	color: #b29743;
 }
 
 a.edit {
-	margin: 0;
+	margin-left: 30px;
+}
+
+div.info {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+form.button {
+	display: inline;
+	margin-left: 20px;
 }

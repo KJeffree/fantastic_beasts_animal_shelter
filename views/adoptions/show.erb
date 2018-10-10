@@ -4,17 +4,22 @@
   </ul>
 </nav>
 
+<body>
+  <div class="info">
+    <p>Adoption id: <%= @adoption.id %></p>
 
-<p>Adoption id: <%= @adoption.id %></p>
+    <p>Owner Name: <%= @adoption.owner.full_name.capitalize %></p>
+    <p>Beast Name: <%= @adoption.beast.name.capitalize %></p>
+    <p>Beast Type: <%= @adoption.beast.type.capitalize %></p>
+    <p>Adoption Date: <%= @adoption.adoption_date %></p>
+    <p>Update Message: <%= @adoption.update_message %></p>
+  </div>
 
-<p>Owner Name: <%= @adoption.owner.full_name.capitalize %></p>
-<p>Beast Name: <%= @adoption.beast.name.capitalize %></p>
-<p>Beast Type: <%= @adoption.beast.type.capitalize %></p>
-<p>Adoption Date: <%= @adoption.adoption_date %></p>
-<p>Update Message: <%= @adoption.update_message %></p>
+  <div class="forms">
+    <a class="edit" href="/adoptions/<%= @adoption.id %>/edit">Edit Adoption Details</a>
 
-<a class="edit" href="/adoptions/<%= @adoption.id %>/edit">Edit Adoption Details</a>
-
-<form action="/adoptions/<%= @adoption.id %>/delete" method="post">
-  <input type="submit" value="Delete Adoption Info">
-</form>
+    <form class="button" action="/adoptions/<%= @adoption.id %>/delete" method="post">
+      <input type="submit" value="Delete Adoption Info">
+    </form>
+  </div>
+</body>
