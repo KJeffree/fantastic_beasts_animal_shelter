@@ -58,6 +58,7 @@ nav ul li{
   font-size: 20px;
   list-style: none;
   margin: 20px;
+	font-family: karma;
 }
 
 nav.layout {
@@ -102,7 +103,7 @@ h1.layout {
 p {
 	padding: 10px;
 	margin-left: 20px;
-	font-family: Oleo Script;
+	font-family: Karma;
 	font-size: 20px;
 }
 
