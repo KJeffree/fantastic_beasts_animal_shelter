@@ -1,16 +1,37 @@
 form {
   margin-top: 40px;
+  font-size: 20px;
+  color: #b29743;
 }
 
-input[type=textarea] {
+label {
+  font-family: Karma;
+  font-size: 20px;
+  color: #b29743;
+}
+
+textarea {
 	width: 50%;
 	height: 150px;
 	padding: 12px 20px;
 	box-sizing: border-box;
-	resize: none;
 	border-radius: 4px;
+  color: #b29749;
+  background-color: #e7e7db;
 }
 
 form.edit {
   margin: 0px;
+}
+
+input[type=text], input[type=date] {
+  background-color: #e7e7db;
+  color: #b29749;
+}
+
+select {
+  background: #e7e7db;
+  color: #b29749;
+  font-size: 12px;
+  font-family: Montserrat;
 }
