@@ -10,10 +10,12 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Location</th>
   </tr>
   <% for owner in @owners %>
   <tr>
     <td> <a href="/owners/<%= owner.id %>"><%= owner.full_name %></a> </td>
+    <td><%= owner.location %></td>
   </tr>
   <% end %>
 </table>

@@ -8,13 +8,16 @@ Owner.delete_all()
 Beast.delete_all()
 
 
-owner1 = Owner.new({'first_name' => 'Queenie', 'last_name' => 'Goldstein'})
-owner2 = Owner.new({'first_name' => 'Porpentina', 'last_name' => 'Goldstein'})
-owner3 = Owner.new({'first_name' => 'Albus', 'last_name' => 'Dumbledore'})
+owner1 = Owner.new({'first_name' => 'Queenie', 'last_name' => 'Goldstein', 'location' => 'New York'})
+owner2 = Owner.new({'first_name' => 'Porpentina', 'last_name' => 'Goldstein', 'location' => 'New York'})
+owner3 = Owner.new({'first_name' => 'Albus', 'last_name' => 'Dumbledore', 'location' => "Hogwarts"})
+owner4 = Owner.new({'first_name' => 'Rubeus', 'last_name' => 'Hagrid', 'location' => "Hogwarts"})
+owner5 = Owner.new({'first_name' => 'Bathilda', 'last_name' => 'Bagshot', 'location' => "Godric's Hollow"})
 
 owner1.save
 owner2.save
 owner3.save
+owner5.save
 
 beast1 = Beast.new({'name' => 'Pickett', 'type' => 'bowtruckle', 'collection_date' => '1925-04-11', 'adoption_status' => 'not adoptable', 'characteristics' => 'peaceful and shy, but will attack if their tree is threatened', 'diet' => 'woodlice or insects' })
 beast2 = Beast.new({'name' => 'Sickleworth', 'type' => 'niffler', 'collection_date' => '1926-07-24', 'adoption_status' => 'adoptable', 'characteristics' => 'affectionate but destructive NOT A HOUSE PET', 'diet' => 'matellic objects' })

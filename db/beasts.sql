@@ -15,7 +15,8 @@ CREATE TABLE beasts(
 CREATE TABLE owners(
   id SERIAL8 PRIMARY KEY,
   first_name VARCHAR(255),
-  last_name VARCHAR(255)
+  last_name VARCHAR(255),
+  location VARCHAR(255)
 );
 
 CREATE TABLE adoptions(

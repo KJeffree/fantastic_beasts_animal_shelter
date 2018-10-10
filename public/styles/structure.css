@@ -47,6 +47,7 @@ table {
 	border-spacing: 0;
 }
 
+/* ^^^RESET CODE^^^ */
 
 header {
 	background-color: #e7e7db;
@@ -61,6 +62,10 @@ nav ul li{
 	font-family: karma;
 }
 
+li {
+	color: #b29749;
+}
+
 nav.layout {
   margin: 20px;
 }
@@ -68,7 +73,6 @@ nav.layout {
 a {
 	text-decoration: none;
   color: #b29749;
-	background-color:
 }
 
 a:hover, a:active, a:focus {
