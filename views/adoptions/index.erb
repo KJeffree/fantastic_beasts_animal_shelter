@@ -16,7 +16,7 @@
   </tr>
   <% for adoption in @adoptions %>
   <tr>
-    <td> <a href="/owners/<%= adoption.owner.id %>"><%= adoption.owner.full_name.capitalize %></a> </td>
+    <td> <a href="/owners/<%= adoption.owner.id %>"><%= adoption.owner.full_name %></a> </td>
     <td> <a href="/beasts/<%= adoption.beast.id %>"><%= adoption.beast.name.capitalize %></a></td>
     <td><%= adoption.beast.type.capitalize %></td>
     <td> <a href="/adoptions/<%= adoption.id %>">View Details</a> </td>
