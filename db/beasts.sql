@@ -9,7 +9,8 @@ CREATE TABLE beasts(
   collection_date DATE,
   adoption_status VARCHAR(255),
   characteristics TEXT,
-  diet VARCHAR(255)
+  diet VARCHAR(255),
+  image VARCHAR(255)
 );
 
 CREATE TABLE owners(

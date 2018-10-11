@@ -3,7 +3,7 @@ require_relative('../db/sql_runner.rb')
 class Beast
 
   attr_reader :id
-  attr_accessor :name, :type, :collection_date, :adoption_status, :characteristics, :diet
+  attr_accessor :name, :type, :collection_date, :adoption_status, :characteristics, :diet, :image
 
   def initialize(options)
     @id = options['id'].to_i
@@ -13,13 +13,14 @@ class Beast
     @adoption_status = options['adoption_status']
     @characteristics = options['characteristics']
     @diet = options['diet']
+    @image = options['image']
   end
 
   def save()
-    sql = "INSERT INTO beasts (name, type, collection_date, adoption_status, characteristics, diet)
-    VALUES ($1, $2, $3, $4, $5, $6)
+    sql = "INSERT INTO beasts (name, type, collection_date, adoption_status, characteristics, diet, image)
+    VALUES ($1, $2, $3, $4, $5, $6, $7)
     RETURNING id"
-    values = [@name, @type, @collection_date, @adoption_status, @characteristics, @diet]
+    values = [@name, @type, @collection_date, @adoption_status, @characteristics, @diet, @image]
     result = SqlRunner.run(sql, values)
     @id = result[0]['id'].to_i
   end
@@ -31,9 +32,9 @@ class Beast
 
   def update()
     sql = "UPDATE beasts
-    SET (name, type, collection_date, adoption_status, characteristics, diet) = ($1, $2, $3, $4, $5, $6)
-    WHERE id = $7"
-    values = [@name, @type, @collection_date, @adoption_status, @characteristics, @diet, @id]
+    SET (name, type, collection_date, adoption_status, characteristics, diet, image) = ($1, $2, $3, $4, $5, $6, $7)
+    WHERE id = $8"
+    values = [@name, @type, @collection_date, @adoption_status, @characteristics, @diet, @image, @id]
     SqlRunner.run(sql, values)
   end
 

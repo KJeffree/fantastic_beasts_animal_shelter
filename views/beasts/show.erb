@@ -1,5 +1,5 @@
 
-<nav>
+<nav class="show">
   <ul>
     <li><a href="/beasts/new">New Beast</a></li>
     <br>
@@ -20,14 +20,16 @@
     <p>Type: <%= @beast.type %> </p>
     <p>Collection Date: <%= @beast.collection_date %> </p>
     <p>Adoption Status: <%= @beast.adoption_status.capitalize %> </p>
-    <p>Characteristics: <%= @beast.characteristics.capitalize %> </p>
+    <p class="characteristics">Characteristics: <%= @beast.characteristics.capitalize %> </p>
     <p>Diet: <%= @beast.diet.capitalize %> </p>
-  </div>
-  <div class="forms">
+    <br>
     <a class="edit" href="/beasts/<%= @beast.id %>/edit">Edit Beast Details</a>
 
     <form class="button" action="/beasts/<%= @beast.id %>/delete" method="post">
       <input type="submit" value="Delete Beast">
     </form>
   </div>
+  <br>
+  <img class="beast" src="<%= @beast.image%>" alt="Image of <%= @beast.type %>" width="250"/>
+
 </body>

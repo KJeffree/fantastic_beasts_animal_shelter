@@ -54,6 +54,11 @@ header {
 	padding: 10px;
 }
 
+img.beast {
+	float: left;
+	margin-right: 50px;
+}
+
 nav ul li{
   display: inline;
   font-size: 20px;
@@ -143,11 +148,19 @@ div.info {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-left: 0px;
+	float: left;
+	width: 700px;
 }
+
+p.characteristics {
+	line-height: 25px;
+}
+
 
 div.main {
 	width: 600px;
 	line-height: 25px;
+	margin-left: 100px;
 }
 
 form.button {
