@@ -13,9 +13,7 @@
     <p>Beast Type: <%= @adoption.beast.type.capitalize %></p>
     <p>Adoption Date: <%= @adoption.adoption_date %></p>
     <p>Update Message: <%= @adoption.update_message %></p>
-  </div>
-
-  <div class="forms">
+    <br>
     <a class="edit" href="/adoptions/<%= @adoption.id %>/edit">Edit Adoption Details</a>
 
     <form class="button" action="/adoptions/<%= @adoption.id %>/delete" method="post">
