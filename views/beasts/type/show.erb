@@ -1,5 +1,3 @@
-
-
 <nav>
   <ul>
     <li><a href="/beasts/new">New Beast</a></li>
@@ -13,8 +11,6 @@
   </ul>
 </nav>
 
-<h1>Beasts Not Available to Adopt</h1>
-
 <table>
   <tr>
     <th>Name</th>
@@ -22,12 +18,10 @@
     <th>Status</th>
   </tr>
   <% for beast in @beasts %>
-  <% if beast.adoption_status.downcase == 'not adoptable' %>
   <tr>
     <td> <a href="/beasts/<%= beast.id %>"><%= beast.name.capitalize %></a> </td>
     <td> <%= beast.type.capitalize %> </td>
     <td> <%= beast.adoption_status.capitalize %>
   </tr>
-  <% end %>
   <% end %>
 </table>

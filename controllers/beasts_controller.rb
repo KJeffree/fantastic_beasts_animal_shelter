@@ -21,6 +21,18 @@ get('/beasts/not-adoptable') do
   erb(:"beasts/not_adoptable/index")
 end
 
+# TYPE INDEX
+get('/beasts/type') do
+  @array_of_types = Beast.array_of_types()
+  erb(:"beasts/type/index")
+end
+
+# POST FORM TYPE
+post('/beasts/type') do
+  redirect to "/beasts/type/#{params[:type]}"
+end
+
+
 # ADD
 get("/beasts/new") do
   erb(:"beasts/new")
@@ -58,4 +70,11 @@ end
 post('/beasts/:id') do
   Beast.new(params).update
   redirect "/beasts"
+end
+
+# SHOW TYPE
+get('/beasts/type/:type') do
+  type = params[:type]
+  @beasts = Beast.find_type(type)
+  erb(:"beasts/type/show")
 end

@@ -66,4 +66,11 @@ class Beast
     SqlRunner.run(sql, [@id])
   end
 
+  def self.array_of_types()
+    sql = "SELECT DISTINCT type FROM beasts"
+    type_array = SqlRunner.run(sql)
+    result = type_array.map {|beast| beast['type']}
+    return result
+  end
+
 end

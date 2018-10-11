@@ -1,0 +1,22 @@
+<nav>
+  <ul>
+    <li><a href="/beasts/new">New Beast</a></li>
+    <br>
+    <br>
+    <li>Filter by:</li>
+    <li> <a href="/beasts">All Beasts</a></li>
+    <li><a href="/beasts/adoptable">Adoptable</a></li>
+    <li><a href="/beasts/not-adoptable">Not Adoptable</a></li>
+  </ul>
+</nav>
+
+
+<form action="/beasts/type" method="post">
+  <label for="search-by-type">Type: </label></li>
+  <select name="type" id="search-by-type">
+    <% for type in @array_of_types %>
+    <option value="<%= type %>"><%= type.capitalize %></option>
+    <% end %>
+  </select></li>
+  <input type="submit" value="Search"> </li>
+</form>

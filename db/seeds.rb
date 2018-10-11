@@ -27,6 +27,7 @@ beast5 = Beast.new({'name' => 'Oracle', 'type' => 'Demiguise', 'collection_date'
 beast6 = Beast.new({'name' => 'Lulu', 'type' => 'Erumpent', 'collection_date' => '1919-05-01', 'adoption_status' => 'not adoptable', 'characteristics' => "won't attack unless provoked, horn is explosive NOT FOR DOMESTIC ADOPTION", 'diet' => 'herbivore'})
 beast7 = Beast.new({'name' => 'Jasmine', 'type' => 'Occamy', 'collection_date' => '1925-09-21', 'adoption_status' => 'adoptable', 'characteristics' => "can grow or shrink to fill the space they are in, highly protective of their eggs", 'diet' => 'rats and birds'})
 beast8 = Beast.new({'name' => 'Frank', 'type' => 'Thunderbird', 'collection_date' => '1926-07-21', 'adoption_status' => 'adoptable', 'characteristics' => "can create storms and senses supernatural danger", 'diet' => 'ferrets'})
+beast9 = Beast.new({'name' => 'Twig', 'type' => 'bowtruckle', 'collection_date' => '1925-02-13', 'adoption_status' => 'adoptable', 'characteristics' => 'peaceful and shy, but will attack if their tree is threatened', 'diet' => 'woodlice or insects' })
 
 beast1.save
 beast2.save
@@ -36,6 +37,7 @@ beast5.save
 beast6.save
 beast7.save
 beast8.save
+beast9.save
 
 adoption1 = Adoption.new({'adoption_date' => '1923-02-15', 'update_message' => 'Fawkes has settled into his new home easily, he is very loyal and we have created a strong bond', 'owner_id' => owner3.id, 'beast_id' => beast3.id})
 
