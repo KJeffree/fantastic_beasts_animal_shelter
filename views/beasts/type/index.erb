@@ -12,7 +12,7 @@
 
 
 <form action="/beasts/type" method="post">
-  <label for="search-by-type">Type: </label></li>
+  <label class="filter" for="search-by-type">Type: </label></li>
   <select name="type" id="search-by-type">
     <% for type in @array_of_types %>
     <option value="<%= type %>"><%= type.capitalize %></option>

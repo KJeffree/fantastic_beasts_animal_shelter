@@ -7,6 +7,7 @@ input[type=submit] {
   border-radius: 4px;
   font-family: Montserrat;
   cursor: pointer;
+  margin-left: 10px;
 }
 
 input[type=submit]:active {
