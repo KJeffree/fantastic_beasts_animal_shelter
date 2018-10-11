@@ -23,7 +23,7 @@ end
 
 # TYPE INDEX
 get('/beasts/type') do
-  @array_of_types = Beast.array_of_types()
+  @array_of_types = Beast.array_of_types().sort
   erb(:"beasts/type/index")
 end
 

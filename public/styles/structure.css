@@ -107,12 +107,26 @@ h1.layout {
 	font-family: Merienda;
 }
 
+h1.main {
+	float: left;
+	margin-top: 80px;
+}
+
+img {
+	margin-left: 50px;
+}
+
 p {
 	padding: 10px;
 	margin-left: 10px;
 	font-family: Karma;
 	font-size: 20px;
 	color: #b29743;
+}
+
+p.main {
+	float: left;
+	clear: left;
 }
 
 a.edit {
@@ -129,6 +143,11 @@ div.info {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-left: 0px;
+}
+
+div.main {
+	width: 600px;
+	line-height: 25px;
 }
 
 form.button {
