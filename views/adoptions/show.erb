@@ -12,7 +12,7 @@
     <p>Beast Name: <%= @adoption.beast.name.capitalize %></p>
     <p>Beast Type: <%= @adoption.beast.type.capitalize %></p>
     <p>Adoption Date: <%= @adoption.adoption_date %></p>
-    <p>Update Message: <%= @adoption.update_message %></p>
+    <p class='update'>Update Message: <%= @adoption.update_message %></p>
     <br>
     <a class="edit" href="/adoptions/<%= @adoption.id %>/edit">Edit Adoption Details</a>
 

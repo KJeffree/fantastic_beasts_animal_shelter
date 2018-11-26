@@ -153,7 +153,7 @@ div.info {
 	width: 700px;
 }
 
-p.characteristics {
+p.characteristics, p.update {
 	line-height: 25px;
 }
 

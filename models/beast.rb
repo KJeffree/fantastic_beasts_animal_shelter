@@ -61,17 +61,23 @@ class Beast
     return result
   end
 
-  def delete()
-    sql = "DELETE FROM beasts
-    WHERE id = $1"
-    SqlRunner.run(sql, [@id])
-  end
-
   def self.array_of_types()
+    # select all of the types of beasts from the database
+    # pick out distinct types (no repeated type in the array)
+    # run the SqlRunner to extract info from database
+    # create an array using the information from the object returned from SqlRunner
+    # return the array
+
     sql = "SELECT DISTINCT type FROM beasts"
     type_array = SqlRunner.run(sql)
     result = type_array.map {|beast| beast['type']}
     return result
+  end
+
+  def delete()
+    sql = "DELETE FROM beasts
+    WHERE id = $1"
+    SqlRunner.run(sql, [@id])
   end
 
 end

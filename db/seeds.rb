@@ -17,6 +17,7 @@ owner5 = Owner.new({'first_name' => 'Bathilda', 'last_name' => 'Bagshot', 'locat
 owner1.save
 owner2.save
 owner3.save
+owner4.save
 owner5.save
 
 beast1 = Beast.new({'name' => 'Pickett', 'type' => 'bowtruckle', 'collection_date' => '1925-04-11', 'adoption_status' => 'not adoptable', 'characteristics' => 'peaceful and shy, but will attack if their tree is threatened', 'diet' => 'woodlice or insects', 'image' => "/images/bowtruckle.png" })
@@ -37,6 +38,8 @@ beast8 = Beast.new({'name' => 'Frank', 'type' => 'thunderbird', 'collection_date
 
 beast9 = Beast.new({'name' => 'Twig', 'type' => 'bowtruckle', 'collection_date' => '1925-02-13', 'adoption_status' => 'adoptable', 'characteristics' => 'peaceful and shy, but will attack if their tree is threatened', 'diet' => 'woodlice or insects', 'image' => "/images/bowtruckle.png"})
 
+beast10 = Beast.new({'name' => 'Nyalls', 'type' => 'thestral', 'collection_date' => '1915-11-01', 'adoption_status' => 'not adoptable', 'characteristics' => 'highly intelligent, has an excellent sense of direction, can only be seen by those who have seen death', 'diet' => 'meat, NO SUGAR', 'image' => "/images/thestral.jpeg"})
+
 beast1.save
 beast2.save
 beast3.save
@@ -46,6 +49,7 @@ beast6.save
 beast7.save
 beast8.save
 beast9.save
+beast10.save
 
 adoption1 = Adoption.new({'adoption_date' => '1923-02-15', 'update_message' => 'Fawkes has settled into his new home easily, he is very loyal and we have created a strong bond', 'owner_id' => owner3.id, 'beast_id' => beast3.id})
 

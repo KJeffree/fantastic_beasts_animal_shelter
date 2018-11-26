@@ -32,6 +32,12 @@ post('/beasts/type') do
   redirect to "/beasts/type/#{params[:type]}"
 end
 
+# SHOW TYPE
+get('/beasts/type/:type') do
+  type = params[:type]
+  @beasts = Beast.find_type(type)
+  erb(:"beasts/type/show")
+end
 
 # ADD
 get("/beasts/new") do
@@ -70,11 +76,4 @@ end
 post('/beasts/:id') do
   Beast.new(params).update
   redirect "/beasts"
-end
-
-# SHOW TYPE
-get('/beasts/type/:type') do
-  type = params[:type]
-  @beasts = Beast.find_type(type)
-  erb(:"beasts/type/show")
 end
